@@ -4,7 +4,9 @@ import java.util.Scanner;
 
 import mms.member.action.Action;
 import mms.member.action.MemberAddAction;
+import mms.member.action.MemberDeleteAction;
 import mms.member.action.MemberShowAction;
+import mms.member.action.MemberUpdateAction;
 
 public class MemberUI {
 
@@ -31,9 +33,10 @@ public class MemberUI {
 				System.out.println("ADD 프로그램 실행 ");
 				break;
 			case 2:
-				action = new MemberShowAction();
+				action = new MemberUpdateAction();
 				break;
 			case 3:
+				action = new MemberDeleteAction();
 				break;
 			case 4:
 				break;
