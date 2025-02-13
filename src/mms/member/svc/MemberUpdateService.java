@@ -1,12 +1,22 @@
 package mms.member.svc;
 
+import java.util.Scanner;
+
 import mms.member.dao.MemberDAO;
 import mms.member.vo.Member;
 
 public class MemberUpdateService {
 	
-	public boolean updateMember(Member newMember) throws Exception {
+public boolean updateMember(int memberId, Member newMember) throws Exception {
 		
-		return false;
+		boolean isUpdateSuccess = false;
+		
+		MemberDAO memberDAO = new MemberDAO();
+		
+		
+		return isUpdateSuccess;
 	}
+	
+	
+    
 }

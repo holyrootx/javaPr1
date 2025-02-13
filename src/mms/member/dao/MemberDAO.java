@@ -1,6 +1,7 @@
 package mms.member.dao;
 
 import java.util.List;
+import java.util.Scanner;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import mms.member.vo.Member;
@@ -37,5 +38,20 @@ public class MemberDAO {
 	public static List<Member> getMemberList() {
 		return memberList;
 	}
+	
+	public boolean deleteMember(int memberID) {
+		for(Member member : memberList) {
+			if (member.getId() == memberID) {
+				memberList.remove(member);
+		//		System.out.println("아이디"+memberID + "정보가 삭제되었습니다");
+				return true;
+			}
+		}
+		//		System.out.println("회원 ID 가 일치하지 않습니다.");
+		return false;
+		
+	}
+	
+	
 	
 }

@@ -18,10 +18,10 @@ public class MemberUI {
 		
 		do {
 			System.out.println("=====회원관리 프로그램=====");
-			System.out.println("1. 회원등록"); //registerMember
-			System.out.println("2. 회원목록보기"); // showMemberList
-			System.out.println("3. 회원정보수정"); // updateMember
-			System.out.println("4. 회원정보삭제"); // deleteMember
+			System.out.println("1. 회원등록"); // MemberAddAction
+			System.out.println("2. 회원목록보기"); // MemberShowAction
+			System.out.println("3. 회원정보수정"); // MemberUpdateAction
+			System.out.println("4. 회원정보삭제"); // MemberDeleteAction
 			System.out.println("5. 프로그램종료");
 			System.out.println("메뉴 번호 : ");
 			
@@ -39,6 +39,7 @@ public class MemberUI {
 				action = new MemberUpdateAction();
 				break;
 			case 4:
+				System.out.println("4번 실행");
 				action = new MemberDeleteAction();
 				break;
 			case 5:

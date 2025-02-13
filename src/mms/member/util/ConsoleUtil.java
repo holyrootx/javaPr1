@@ -2,6 +2,8 @@ package mms.member.util;
 
 import java.util.Scanner;
 
+import mms.member.dao.MemberDAO;
+import mms.member.svc.MemberUpdateService;
 import mms.member.vo.Member;
 
 public class ConsoleUtil {
@@ -39,4 +41,7 @@ public class ConsoleUtil {
 		return sc.nextInt();
 		
 	}
+	
+	
+	
 }
