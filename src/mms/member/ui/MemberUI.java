@@ -33,12 +33,13 @@ public class MemberUI {
 				System.out.println("ADD 프로그램 실행 ");
 				break;
 			case 2:
-				action = new MemberUpdateAction();
+				action = new MemberShowAction();
 				break;
 			case 3:
-				action = new MemberDeleteAction();
+				action = new MemberUpdateAction();
 				break;
 			case 4:
+				action = new MemberDeleteAction();
 				break;
 			case 5:
 				System.out.println("프로그램 종료");

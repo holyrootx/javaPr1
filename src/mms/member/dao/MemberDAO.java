@@ -16,7 +16,7 @@ public class MemberDAO {
 		return memberList.add(newMember);
 	}
 	
-	public boolean showMember(List<Member> memberList, int memberId ) {
+	public boolean showMember(int memberId ) {
 		for(Member member : memberList) {
 			if (member.getId() == memberId) {
 				System.out.println(member);
@@ -26,7 +26,7 @@ public class MemberDAO {
 		return false;
 	}
 	
-	public boolean showAllMember(List<Member> memberList) {
+	public boolean showAllMember() {
 		for(Member member : memberList) {
 				System.out.println(member);
 			}

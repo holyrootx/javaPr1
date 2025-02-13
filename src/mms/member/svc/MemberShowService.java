@@ -13,7 +13,7 @@ public class MemberShowService {
 		//
 		MemberDAO memberDAO = new MemberDAO();
 		
-		isShowSuccess = memberDAO.showMember(memberDAO.getMemberList(),memberId);
+		isShowSuccess = memberDAO.showMember(memberId);
 		
 		return isShowSuccess;
 		
@@ -26,7 +26,7 @@ public class MemberShowService {
 		// 
 		MemberDAO memberDAO = new MemberDAO();
 		
-		isShowSuccess = memberDAO.showAllMember(memberDAO.getMemberList());
+		isShowSuccess = memberDAO.showAllMember();
 		
 		return isShowSuccess;
 		

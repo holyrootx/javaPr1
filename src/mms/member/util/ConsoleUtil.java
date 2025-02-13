@@ -32,11 +32,10 @@ public class ConsoleUtil {
 		
 		return newMember;
 	}
-	public int getMemberId(Scanner sc) {
+	public int getMemberId(Scanner sc,String message) {
 		// 회원 입력 기능 작성
-		System.out.println("회원 전체를 조회하시려면 0을, 특정 회원을 조회하시려면 id를 입력해주세요");
+		System.out.println(message);
 		System.out.print(">>");
-		
 		return sc.nextInt();
 		
 	}

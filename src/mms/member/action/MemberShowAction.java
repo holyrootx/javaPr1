@@ -12,7 +12,7 @@ public class MemberShowAction implements Action{
 	public void execute(Scanner sc) throws Exception {
 		ConsoleUtil cu = new ConsoleUtil();
 		
-		int MemberId = cu.getMemberId(sc);
+		int MemberId = cu.getMemberId(sc,"조회하실 회원 번호를 입력해주세요(전체는 0)");
 		// id 까지 받아왔고 0이면 전체 목록을 조회
 		// 아니면 특정 목록만 불러올것
 		boolean isShowSuccess = false;
