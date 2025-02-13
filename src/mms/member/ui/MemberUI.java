@@ -7,6 +7,7 @@ import mms.member.action.MemberAddAction;
 import mms.member.action.MemberDeleteAction;
 import mms.member.action.MemberShowAction;
 import mms.member.action.MemberUpdateAction;
+import mms.member.action.ProgramQuitAction;
 
 public class MemberUI {
 
@@ -30,7 +31,6 @@ public class MemberUI {
 			switch(menu) {
 			case 1:
 				action = new MemberAddAction();
-				System.out.println("ADD 프로그램 실행 ");
 				break;
 			case 2:
 				action = new MemberShowAction();
@@ -39,11 +39,10 @@ public class MemberUI {
 				action = new MemberUpdateAction();
 				break;
 			case 4:
-				System.out.println("4번 실행");
 				action = new MemberDeleteAction();
 				break;
 			case 5:
-				System.out.println("프로그램 종료");
+				action = new ProgramQuitAction();
 				isStop = true;
 				break;
 			default:

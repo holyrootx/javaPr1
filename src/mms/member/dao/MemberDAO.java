@@ -51,7 +51,41 @@ public class MemberDAO {
 		return false;
 		
 	}
+	public Member getMemberById(int memberId) {
+	    for (Member member : memberList) {
+	        if (member.getId() == memberId) {
+	            return member;
+	        }
+	    }
+	    return null;  // 회원이 없으면 null을 반환
+	}
 	
+	public boolean updateMember(int memberId, Member updatedMember) {
+		for (Member member : memberList) {
+			if (member.getId() == memberId) {
+				//System.out.println("수정 전: " + member);
+
+				// 기존 정보를 유지하면서 새로운 정보 적용
+				if (updatedMember.getAddr() != null && !updatedMember.getAddr().isEmpty()) {
+					member.setAddr(updatedMember.getAddr());
+				}
+				if (updatedMember.getEmail() != null && !updatedMember.getEmail().isEmpty()) {
+					member.setEmail(updatedMember.getEmail());
+				}
+				if (updatedMember.getNation() != null && !updatedMember.getNation().isEmpty()) {
+					member.setNation(updatedMember.getNation());
+				}
+				if (updatedMember.getAge() > 0) {
+					member.setAge(updatedMember.getAge());
+				}
+
+				//System.out.println("수정 후: " + member);
+				return true;
+			}
+		}
+		
+		return false;
+	}	
 	
 	
 }
