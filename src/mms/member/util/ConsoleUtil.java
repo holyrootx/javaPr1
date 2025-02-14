@@ -2,14 +2,13 @@ package mms.member.util;
 
 import java.util.Scanner;
 
-import mms.member.dao.MemberDAO;
-import mms.member.svc.MemberUpdateService;
 import mms.member.vo.Member;
+import java.util.InputMismatchException;
 
 public class ConsoleUtil {
 	static int id = 1;
 	// Member를 만들어주는 역할
-	public Member getNewMember(Scanner sc) {
+	public Member getNewMember(Scanner sc) throws Exception {
 		// 회원 입력 기능 작성
 		System.out.println("등록할 회원 정보를 입력하세요");
 		
@@ -26,7 +25,29 @@ public class ConsoleUtil {
 		String email = sc.next();
 
 		System.out.print("나이 : ");
-		int age = sc.nextInt();
+		int age = 0;
+		
+		do {
+			try {
+				age = sc.nextInt();
+				if (age < 0) {
+					throw new Exception("IsCanNotBeAge");
+				}
+				break;
+			} catch(InputMismatchException e) {
+				sc.nextLine(); // 버퍼를 비워줘야함 
+				System.out.println("숫자를 다시 입력해주세요");
+				System.out.print("나이 : ");
+				continue;
+			} catch(Exception e) {
+				sc.nextLine(); // 버퍼를 비워줘야함 
+				System.out.println("잘못된 값을 입력하였습니다.");
+				System.out.println("다시 입력해주세요.");
+				System.out.print("나이 : ");
+			}
+		} while(true);
+		
+		
 		
 		
 		

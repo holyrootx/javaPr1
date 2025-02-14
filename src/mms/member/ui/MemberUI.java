@@ -7,7 +7,6 @@ import mms.member.action.MemberAddAction;
 import mms.member.action.MemberDeleteAction;
 import mms.member.action.MemberShowAction;
 import mms.member.action.MemberUpdateAction;
-import mms.member.action.ProgramQuitAction;
 import java.util.InputMismatchException;
 
 public class MemberUI {
@@ -53,7 +52,8 @@ public class MemberUI {
 				action = new MemberDeleteAction();
 				break;
 			case 5:
-				action = new ProgramQuitAction();
+				System.out.println("프로그램을 종료합니다.");
+				System.exit(0);
 				isStop = true;
 				break;
 			default:
