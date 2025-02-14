@@ -18,7 +18,7 @@ public class MemberShowAction implements Action{
 			try {
 				MemberId = cu.getMemberId(sc,"조회하실 회원 번호를 입력해주세요(전체는 0)");
 				break;
-			}catch(Exception e) {
+			} catch(Exception e) {
 				System.out.println("제발 숫자를 입력해주세요");
 				sc.nextLine(); // 버퍼를 비워줘야함 
 				continue;

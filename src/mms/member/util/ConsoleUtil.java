@@ -63,6 +63,10 @@ public class ConsoleUtil {
 		
 	}
 	
+	public int getServiceNumber(Scanner sc) {
+		 return sc.nextInt();
+	}
+	
 	
 	
 }

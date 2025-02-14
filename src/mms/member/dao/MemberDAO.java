@@ -28,11 +28,17 @@ public class MemberDAO {
 	}
 	
 	public boolean showAllMember() {
-		for(Member member : memberList) {
+		if (memberList.size() != 0) {
+			for(Member member : memberList) {
 				System.out.println(member);
 			}
-		
-		return true;	
+			
+			return true;
+		} else {
+			System.out.println("현재 가입한 회원이 없습니다.");
+			
+			return true;
+		}
 	}
 	
 	public static List<Member> getMemberList() {
@@ -63,7 +69,7 @@ public class MemberDAO {
 	public boolean updateMember(int memberId, Member updatedMember) {
 		for (Member member : memberList) {
 			if (member.getId() == memberId) {
-				//System.out.println("수정 전: " + member);
+				System.out.println("수정 전: " + member);
 
 				// 기존 정보를 유지하면서 새로운 정보 적용
 				if (updatedMember.getAddr() != null && !updatedMember.getAddr().isEmpty()) {
@@ -79,7 +85,7 @@ public class MemberDAO {
 					member.setAge(updatedMember.getAge());
 				}
 
-				//System.out.println("수정 후: " + member);
+				System.out.println("수정 후: " + member);
 				return true;
 			}
 		}

@@ -7,14 +7,14 @@ import mms.member.action.MemberAddAction;
 import mms.member.action.MemberDeleteAction;
 import mms.member.action.MemberShowAction;
 import mms.member.action.MemberUpdateAction;
+import mms.member.util.ConsoleUtil;
+
 import java.util.InputMismatchException;
 
 public class MemberUI {
 
 	public static void main(String[] args) {
-
-		boolean isStop = false;
-		
+		ConsoleUtil cu = new ConsoleUtil();
 		Scanner sc = new Scanner(System.in);
 		int menu = 0;
 		do {
@@ -27,7 +27,10 @@ public class MemberUI {
 			System.out.println("메뉴 번호 : ");
 			
 			try {
-				menu = sc.nextInt();
+				// 어떤 값을 받는지 가끔 헷갈려서 Util 메서드에 추가 후  
+				// 어떤 역할을 하는지 알 수 있도록 util의 메서드로 처리하였음
+				// sc.nextint(); 
+				menu = cu.getServiceNumber(sc);
 			} catch(InputMismatchException e){
 				sc.nextLine(); // 버퍼를 비워줘야함 
 				System.out.println("숫자 1부터 5에 해당하는 값을 입력해주세요");
@@ -54,7 +57,6 @@ public class MemberUI {
 			case 5:
 				System.out.println("프로그램을 종료합니다.");
 				System.exit(0);
-				isStop = true;
 				break;
 			default:
 				break;
@@ -67,7 +69,7 @@ public class MemberUI {
 				
 			}
 			
-		} while(!isStop);
+		} while(true);
 		
 	}
 
