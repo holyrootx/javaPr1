@@ -8,6 +8,7 @@ import mms.member.action.MemberDeleteAction;
 import mms.member.action.MemberShowAction;
 import mms.member.action.MemberUpdateAction;
 import mms.member.action.ProgramQuitAction;
+import java.util.InputMismatchException;
 
 public class MemberUI {
 
@@ -16,7 +17,7 @@ public class MemberUI {
 		boolean isStop = false;
 		
 		Scanner sc = new Scanner(System.in);
-		
+		int menu = 0;
 		do {
 			System.out.println("=====회원관리 프로그램=====");
 			System.out.println("1. 회원등록"); // MemberAddAction
@@ -26,8 +27,18 @@ public class MemberUI {
 			System.out.println("5. 프로그램종료");
 			System.out.println("메뉴 번호 : ");
 			
-			int menu = sc.nextInt();
+			try {
+				menu = sc.nextInt();
+			} catch(InputMismatchException e){
+				sc.nextLine(); // 버퍼를 비워줘야함 
+				System.out.println("숫자 1부터 5에 해당하는 값을 입력해주세요");
+				continue;
+			}
 			Action action = null;
+			if(menu<= 0 || menu > 5) {
+				System.out.println("숫자 1부터 5에 해당하는 값을 입력해주세요");
+				continue;
+			}
 			switch(menu) {
 			case 1:
 				action = new MemberAddAction();
@@ -51,8 +62,9 @@ public class MemberUI {
 			
 			try {
 				action.execute(sc);		
-			} catch(Exception e){
-				e.printStackTrace();
+			} catch (Exception e) {
+				continue;
+				
 			}
 			
 		} while(!isStop);
