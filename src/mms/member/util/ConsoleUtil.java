@@ -30,7 +30,7 @@ public class ConsoleUtil {
 		do {
 			try {
 				age = sc.nextInt();
-				if (age < 0) {
+				if (age <= 0) {
 					throw new Exception("IsCanNotBeAge");
 				}
 				break;
